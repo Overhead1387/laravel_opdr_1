@@ -8,18 +8,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('planets', function (Blueprint $table) {
+        Schema::create('solar_systems', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->integer('size_in_km');
-            $table->foreignId('solar_system_id')->constrained();
+            $table->string('galaxy');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('planets');
+        Schema::dropIfExists('solar_systems');
     }
 };
